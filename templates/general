@@ -1,9 +1,0 @@
-{% block heading %}
-{% endblock %}
-
-{% block body %}
-
-
-
-
-{% endblock %}
