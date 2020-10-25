@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block heading %}
+
+{% endblock %}
+{% block home %}<a href="/" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-right"></i>Home</a>{% endblock %}
+{% block Services %} <button class="w3-button" title="Notifications" onclick="window.location.href='/services'">Services <i class="fa fa-caret-down"></i></button>{% endblock %}  
+{% block login %}<a href="/login" class="w3-bar-item w3-teal w3-button w3-hide-small w3-hover-white">Login</a>{% endblock %}
+{% block body %}
+<br>
+<style>
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.div1 {
+  max-width: 420px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+</style>
+   <div class="w3-auto div div1">
+  <form action="/action_page.php" method="post">
+        
+    <div class="w3-container w3-card-4">
+    <div class="w3-padding-24"><span class="w3-xxlarge w3-border-teal w3-bottombar">Login</span></div>
+    <div class="w3-container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required><br>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required><br><br>
+      <button class="w3-btn w3-block w3-teal" type="submit">Login</button><br>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <span class="w3-right psw">Forgot <a href="#">password?</a></span><br><br>
+    </div>
+  </form>
+</div><br>
+<div style="float:left; width: 39%;"><hr/></div>
+<div style="float:right; width: 39%;"><hr/></div>
+<font color="grey" size=2><center>New Here ?</font></center> 
+<br>
+<button class="w3-button w3-block w3-grey" onclick="window.location.href='/signup'">SignUp</button><br>
+</div>
+
+{% endblock %}

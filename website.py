@@ -4,19 +4,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return render_template("main.html")
+    return render_template("home.html")
 
 @app.route("/services")
 def services():
     return render_template("services.html")
 
-@app.route("/About")
-def about():
-    return render_template("about.html")
-
-@app.route("/contactus")
-def contact():
-    return render_template("contact.html")
 
 @app.route("/login")
 def login():

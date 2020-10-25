@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<title>Tiet Helpdesk</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{url_for('static', filename='design.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='black_design.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 4</a>
+  <a href="#" class="w3-bar-item w3-button">Link 5</a>
+</nav>
+<!-- Navbar -->
+<div id="navbar" class="navbar-menu navbar-scroll w3-top">
+ <div class="navbar-start w3-bar w3-theme-d2 w3-left-align">
+  
+{% block home %}<a href="/" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>{% endblock %}
+ <div class="w3-dropdown-hover w3-hide-small">
+   {% block Services %} <button class="w3-button" title="Notifications" onclick="window.location.href='/services'">Services <i class="fa fa-caret-down"></i></button>{% endblock %}    
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="/services" class="w3-bar-item w3-button">Rent a vehicle</a>
+      <a href="/services" class="w3-bar-item w3-button">Groceries</a>
+      <a href="/services" class="w3-bar-item w3-button">Buy/Sell old items</a>
+</div>
+</div> 
+  <a href="/#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+  <a href="/#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact Us</a>
+  {% block login %}<a href="/login" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Login</a>{% endblock %}
+     
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="/#about" class="w3-bar-item w3-button">About</a>
+    <a href="/#contact" class="w3-bar-item w3-button">Contact Us</a>
+    <a href="/login" class="w3-bar-item w3-button">Login/Singup</a>
+    <a href="#" class="w3-bar-item w3-button">Search</a>
+  </div>
+</div>
+        {% block body %}
+        {% endblock %}
+ <section id="team" class="page">
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>OUR TEAM</h2>
+<p>Meet the team </p>
+<div class="w3-row">
+  <div class="w3-col" style="width:20%"><img src="/w3images/avatar.jpg" alt="Boss" style="width:20%" class="w3-circle w3-hover-opacity">
+  <h3>Black Cobra</h3>
+  <p>Web Designer</p>
+</div>
+  <div class="w3-col" style="width:20%"><img src="/w3images/avatar.jpg" alt="Boss" style="width:20%" class="w3-circle w3-hover-opacity">
+  <h3>Gumber</h3>
+  <p>Support</p></div>
+  <div class="w3-col" style="width:20%"><img src="/w3images/avatar.jpg" alt="Boss" style="width:20%" class="w3-circle w3-hover-opacity">
+  <h3>Mahajan</h3>
+  <p>Support</p></div>
+  <div class="w3-col" style="width:20%"><img src="/w3images/avatar.jpg" alt="Boss" style="width:20%" class="w3-circle w3-hover-opacity">
+  <h3>Modi</h3>
+  <p>Fixer</p></div>
+  <div class="w3-col" style="width:20%"><img src="/w3images/avatar.jpg" alt="Boss" style="width:20%" class="w3-circle w3-hover-opacity">
+  <h3>Suri</h3>
+  <p>Fixer</p></div>
+</div>
+</div>
+</section>
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h4>Follow Us</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+       
+    <a class="w3-button w3-theme" href="/"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+<script src="{{url_for('static', filename='vanillajs-scrollspy.min.js')}}"></script>
+    <script>
+      const navbar = document.querySelector('#navbar');
+      const scrollspy = new VanillaScrollspy(navbar);
+      scrollspy.init();
+    </script>
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+    </body>
+</html>
