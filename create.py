@@ -13,7 +13,7 @@ from wtforms import SelectField
 from models import * 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:567890@localhost:5432/soft'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:12345@localhost:5432/software'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db.init_app(app)
 

@@ -1,0 +1,18 @@
+{% extends "services.html" %}
+{% block heading %}{% endblock %}
+{% block home %}<a href="/" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-right"></i>Home</a>{% endblock %}
+{% block Services %} <button class="w3-button w3-teal" title="Notifications" onclick="window.location.href='/services'">Services <i class="fa fa-caret-down"></i></button>{% endblock %}  
+{% block login %}<a href="/login" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Login</a>{% endblock %}
+{% block loggedin %}<a class="w3-bar-item w3-hide-small w3-right ">Welcome {{name}}</a>{% endblock %}
+{% block body %}
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="{{url_for('static', filename='put.jpg')}}" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+
+{% endblock %}
+
+
+  
+
+
+

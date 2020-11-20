@@ -23,16 +23,16 @@ class Users(UserMixin, db.Model):
     #roll = db.Column(db.Integer)
 
 class LoginForm(FlaskForm):
-    email = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
-    password = PasswordField('password', validators=[InputRequired(), Length(min=8, max=80)])
-    remember = BooleanField('remember me')
+    email = StringField('Username', validators=[InputRequired(), Length(min=4, max=15)])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=80)])
+    remember = BooleanField('Remember me')
 
 class RegisterForm(FlaskForm):
-    name = StringField('name', validators=[InputRequired(), Length(max=50)])
+    name = StringField('Name', validators=[InputRequired(), Length(max=50)])
     #roll = IntegerField('roll number',validators=[InputRequired(),Length(max=9)])
-    email = StringField('email', validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)])
+    email = StringField('Email', validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)])
     #username = StringField('username', validators=[InputRequired(), Length(min=4, max=15)])
-    password = PasswordField('password', validators=[InputRequired(), Length(min=1, max=80)])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=1, max=80)])
     #phone = StringField('phone number', validators=[InputRequired(), Length(max=10)])
     #gender = SelectField('Gender',choices=[('M','Male'),('F','Female')])
     #hostel = SelectField('Current Hostel',choices=[])

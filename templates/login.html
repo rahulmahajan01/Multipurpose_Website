@@ -20,7 +20,7 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 .div1 {
-  max-width: 420px;
+  max-width: 450px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -39,7 +39,7 @@ input[type=text], input[type=password] {
         {{ form.hidden_tag() }}
         {{ wtf.form_field(form.email) }}
         {{ wtf.form_field(form.password) }}
-        {{ wtf.form_field(form.remember) }}      
+        {{ wtf.form_field(form.remember) }}<br> 
         <button class="w3-btn w3-block w3-teal">Login</button><br>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me

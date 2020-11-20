@@ -15,14 +15,14 @@ bootstrap = Bootstrap(app)
 db= SQLAlchemy()
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:567890@localhost:5432/soft'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:12345@localhost:5432/software'
 db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.get(user_id)
+    return Users.query.get(int(user_id))
 
 @app.route("/")
 def main():
@@ -39,11 +39,12 @@ def login():
 
     if request.method == 'POST':
         user = Users.query.filter_by(email=form.email.data).first()
+        name = user.name
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user, remember=form.remember.data)
                 #return '<h1>' + form.email.data + ' ' + form.password.data + ' ' + '  </h1>'
-                return render_template("services.html")
+                return render_template("user.html", name=name)
 
         return '<h1>Invalid username or password</h1>'
         #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
