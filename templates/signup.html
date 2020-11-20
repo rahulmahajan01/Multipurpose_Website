@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block heading %}
+
+{% endblock %}
+{% block home %}<a href="/" class="w3-bar-item w3-button"><i class="fa fa-home w3-margin-right"></i>Home</a>{% endblock %}
+{% block Services %} <button class="w3-button" title="Notifications" onclick="window.location.href='/services'">Services <i class="fa fa-caret-down"></i></button>{% endblock %}  
+{% block login %}<a href="/login" class="w3-bar-item w3-teal w3-button w3-hide-small w3-hover-white">Login</a>{% endblock %}
+{% block body %}
+<br>
+<style>
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.div1 {
+  max-width: 520px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 400px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+</style>
+   <div class="w3-auto div div1">
+
+  <form action="{{url_for('user')}}" method="post">
+        
+    <div class="w3-container w3-card-4">
+    <div class="w3-padding-24"><span class="w3-xxlarge w3-border-teal w3-bottombar">Signup</span></div>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <div class="w3-container">
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" > Remember me
+    </label>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      
+        <button class="w3-btn w3-block w3-teal">Signup</button><br>
+    </div>
+  </div>
+</form>
+  
+</div><br>
+<div style="float:left; width: 39%;"><hr/></div>
+<div style="float:right; width: 39%;"><hr/></div>
+<font color="grey" size=2><center>Already registered?</font></center> 
+<br>
+<button class="w3-button w3-block w3-grey" onclick="window.location.href='/signup'">Login</button><br>
+</div>
+
+{% endblock %}
